@@ -22,7 +22,7 @@ export const UserContext = createContext([]);
 
 const App = () => {
   const [user, setUser] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (user) {
       async function getRefreshToken() {

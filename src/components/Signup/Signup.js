@@ -131,12 +131,8 @@ export default function Signup(props) {
                 values,
                 touched,
                 errors,
-                dirty,
-                isSubmitting,
                 handleChange,
                 handleBlur,
-                handleSubmit,
-                handleReset,
               } = props;
               return (
                 <Form className={classes.form}>
@@ -163,7 +159,6 @@ export default function Signup(props) {
                           autoFocus
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          fullWidth
                         />
                         <FormHelperText id="component-error-text">
                           {touched.username ? errors.username : ""}
@@ -184,10 +179,8 @@ export default function Signup(props) {
                           label="Email Address"
                           name="email"
                           autoComplete="email"
-                          autoFocus
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          fullWidth
                         />
                         <FormHelperText id="component-error-text">
                           {touched.email ? errors.email : ""}
@@ -209,7 +202,6 @@ export default function Signup(props) {
                           label="Password"
                           name="password"
                           autoComplete="password"
-                          autoFocus
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
@@ -221,7 +213,6 @@ export default function Signup(props) {
                     <FormControlLabel
                       control={<Checkbox value="remember" color="primary" />}
                       label="Remember me"
-                      fullWidth
                     />
                     <Button
                       type="submit"
@@ -248,7 +239,7 @@ export default function Signup(props) {
                           variant="body2"
                           style={{ textDecoration: "none" }}
                         >
-                          {"Don't have an account? Sign Up"}
+                          {"You have an account? Sign in"}
                         </Link>
                       </Grid>
                     </Grid>
