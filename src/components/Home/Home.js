@@ -59,7 +59,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchProtected() {
       const result = await (
-        await fetch("http://localhost:4000/api/user", {
+        await fetch("/api/user", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
