@@ -27,7 +27,7 @@ const App = () => {
  
       async function getRefreshToken() {
         const userCredential = await (
-          await fetch("/api/user/refreshtoken", {
+          await fetch("https://auth7.herokuapp.com/api/user/refreshtoken", {
             method: "POST",
             credentials: "include", // Needed to include the cookie
             headers: {
