@@ -85,7 +85,7 @@ export default function Signup(props) {
     const { username, email, password } = values;
 
     const userCredential = await (
-      await fetch("/api/user/signup", {
+      await fetch("https://auth7.herokuapp.com/api/user/signup", {
         method: "POST",
         credentials: "include",
         headers: {
