@@ -24,7 +24,7 @@ const App = () => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (user) {
+ 
       async function getRefreshToken() {
         const userCredential = await (
           await fetch("/api/user/refreshtoken", {
@@ -46,7 +46,7 @@ const App = () => {
         }
       }
       getRefreshToken();
-    }
+    
   }, []);
 
   if (loading) return <div>Loding..</div>;
