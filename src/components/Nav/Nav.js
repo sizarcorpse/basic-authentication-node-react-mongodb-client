@@ -29,7 +29,7 @@ export default function ButtonAppBar(props) {
   const [user, setUser] = useContext(UserContext);
 
   const logOut = async () => {
-    await fetch("/api/user/logout", {
+    await fetch("https://auth7.herokuapp.com/api/user/logout", {
       method: "POST",
       credentials: "include", // Needed to include the cookie
       headers: {
