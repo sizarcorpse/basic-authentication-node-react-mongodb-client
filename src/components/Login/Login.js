@@ -82,7 +82,7 @@ function Login(props) {
     const { email, password } = values;
 
     const userCredential = await (
-      await fetch("/api/user/login", {
+      await fetch("https://auth7.herokuapp.com/api/user/login", {
         method: "POST",
         credentials: "include",
         headers: {
