@@ -59,7 +59,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchProtected() {
       const result = await (
-        await fetch("/api/user", {
+        await fetch("https://auth7.herokuapp.com/api/user", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

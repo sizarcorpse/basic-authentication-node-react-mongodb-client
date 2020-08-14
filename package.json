@@ -2,7 +2,11 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "engines": {
+=======
+    "engines": {
+>>>>>>> 2c4db30586e9638567ef62f25fb0df6011951d68
     "node": "14.4.0",
     "npm": "6.14.7"
   },
@@ -43,6 +47,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://auth7.herokuapp.com"
+  }
 }
