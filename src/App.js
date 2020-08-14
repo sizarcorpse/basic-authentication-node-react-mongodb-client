@@ -24,29 +24,27 @@ const App = () => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (user) {
-      async function getRefreshToken() {
-        const userCredential = await (
-          await fetch("/api/user/refreshtoken", {
-            method: "POST",
-            credentials: "include", // Needed to include the cookie
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-        ).json();
-        if (userCredential.accesstoken) {
-          setUser({
-            accesstoken: userCredential.accesstoken,
-            isAuthenticated: true,
-          });
-          setLoading(false);
-        } else {
-          setLoading(false);
-        }
+    async function getRefreshToken() {
+      const userCredential = await (
+        await fetch("/api/user/refreshtoken", {
+          method: "POST",
+          credentials: "include", // Needed to include the cookie
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+      ).json();
+      if (userCredential.accesstoken) {
+        setUser({
+          accesstoken: userCredential.accesstoken,
+          isAuthenticated: true,
+        });
+        setLoading(false);
+      } else {
+        setLoading(false);
       }
-      getRefreshToken();
     }
+    getRefreshToken();
   }, []);
 
   if (loading) return <div>Loding..</div>;
