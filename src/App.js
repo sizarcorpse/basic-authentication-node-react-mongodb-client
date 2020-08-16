@@ -31,6 +31,9 @@ const App = () => {
           credentials: "include", // Needed to include the cookie
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+
+            "Access-Control-Allow-Credentials": true,
           },
         })
       ).json();
