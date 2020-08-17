@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import axios from "axios";
 import {
   BrowserRouter as Router,
   Route,
@@ -29,14 +30,33 @@ const App = () => {
         await fetch("https://auth7.herokuapp.com/api/user/refreshtoken", {
           method: "POST",
           credentials: "include", // Needed to include the cookie
+          crossDomain: true,
+          mode: "cors",
+          withCredentials: true,
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
-
             "Access-Control-Allow-Credentials": true,
           },
         })
       ).json();
+
+      // let url = "https://auth7.herokuapp.com/api/user/refreshtoken";
+
+      // let axiosConfig = {
+      //   headers: {
+      //     "Content-Type": "application/json;charset=UTF-8",
+      //     "Access-Control-Allow-Origin": "*",
+      //     "Access-Control-Allow-Credentials": true,
+      //   },
+      // };
+
+      // const userCredential = await axios.post(url, axiosConfig, {
+      //   withCredentials: true,
+      //   cors: true,
+      //   mode: "cors",
+      // });
+
       if (userCredential.accesstoken) {
         setUser({
           accesstoken: userCredential.accesstoken,
